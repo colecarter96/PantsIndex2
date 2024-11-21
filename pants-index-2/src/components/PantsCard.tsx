@@ -1,15 +1,15 @@
 import Link from 'next/link';
 
 interface PantsCardProps {
-  id: string;
+  _id: string;
   name: string;
   brand: string;
   price: string;
   coverImg: string;
 }
 
-const PantsCard: React.FC<PantsCardProps> = ({ id, name, brand, price, coverImg }) => (
-  <Link href={`/pants/${id}`}>
+const PantsCard: React.FC<PantsCardProps> = ({ _id, name, brand, price, coverImg }) => (
+  <Link href={`/pants/${_id}`}>
     <div className="pantsCard flex flex-col bg-white overflow-hidden ">
       <div className="pantsCardIMG relative w-full aspect-square bg-white">
         <img

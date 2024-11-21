@@ -1,13 +1,17 @@
-import mongoose from 'mongoose';
+import mongoose, { Schema, model, models } from 'mongoose';
 
-const PantsSchema = new mongoose.Schema({
-  name: String,
-  brand: String,
-  price: String,
-  rise: Number,
-  thigh: Number,
-  knee: Number,
-  coverImg: String,
+const PantsSchema = new Schema({
+  name: { type: String, required: true },
+  brand: { type: String, required: true },
+  price: { type: String, required: true },
+  waist: { type: String, required: true },
+  inseam: { type: String, required: true },
+  rise: { type: String, required: true },
+  thigh: { type: String, required: true },
+  knee: { type: String, required: true },
+  hem: { type: String, required: true },
+  coverImg: { type: String, required: true },
+  hoverImg: { type: String, required: true },
 });
 
-export default mongoose.models.Pants || mongoose.model('Pants', PantsSchema);
+export default models.Pants || model('Pants', PantsSchema);
