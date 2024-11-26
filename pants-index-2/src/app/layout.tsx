@@ -1,14 +1,15 @@
+"use client";
 import type { Metadata } from "next";
+import { useState } from "react";
 import localFont from "next/font/local";
-import "./globals.css";
+"use client";
 
-import "./globals.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import { useState } from "react";
+import Header from "@/app/components/Header";
 
 export const metadata = {
   title: "Pants Index",
-  description: "Find the perfect pants tailored to your preferences.",
+  description: "Discover the best pants!",
 };
 
 export default function RootLayout({
@@ -16,12 +17,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [filters, setFilters] = useState({
+    legOpening: [5, 18],
+    thigh: [5, 20],
+    rise: [8, 20],
+  });
+
   return (
     <html lang="en">
-      <body >
-        <Header />
-        <main>{children}</main>
-        <Footer />
+      <body>
+        <Header filters={filters} setFilters={setFilters} />
+        {children}
       </body>
     </html>
   );
