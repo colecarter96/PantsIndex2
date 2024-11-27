@@ -31,7 +31,7 @@ const HomePage = async () => {
   const pantsData: Pants[] = await res.json();
 
   return (
-    <main id="content" className="ml-4 p-8 pt-18">
+    <main id="content" className="m-10 p-8 pt-24">
       <div className="grid gap-6 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
         {pantsData.map((pants) => (
           <PantsCard
